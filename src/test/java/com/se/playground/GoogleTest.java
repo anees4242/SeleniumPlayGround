@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 public class GoogleTest {
 
+	private static final String SEARCH_TERM = "taza freshmeat";
 	private WebDriver driver;
 
 	@BeforeSuite
@@ -23,15 +24,16 @@ public class GoogleTest {
 	public void login() throws InterruptedException {
 		driver.get("http://www.google.com/ncr");
 		WebElement searchTxt = driver.findElement(By.name("q"));
-		searchTxt.sendKeys("taza freshmeat");
+		searchTxt.sendKeys(SEARCH_TERM);
 		Thread.sleep(3000);
 		WebElement searchBtn = driver.findElement(By.cssSelector("[name='btnK']"));
 		// *[text()='Login'] - Exact match
+		//tagname[contains(whereToSearch,whatToSearch)]
 		// button[contains(.,'Login')] - Partial match
 		// button[contains(text(),'Login')] - Partial match
 //		(//button[contains(.,'Login')])[2]
 		searchBtn.click();
-		Assert.assertEquals(driver.getTitle().substring(0, 14), "taza freshmeat");
+		Assert.assertEquals(driver.getTitle().substring(0, 14), SEARCH_TERM);
 	}
 
 	@AfterTest
