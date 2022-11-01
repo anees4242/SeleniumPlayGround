@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Failed suite [Default suite]]]">
+  <test thread-count="5" name="Default test(failed)(failed)(failed)">
+    <classes>
+      <class name="com.se.playground.AmazonShopping">
+        <methods>
+          <include name="login"/>
+          <include name="afterTest"/>
+          <include name="beforeSuite"/>
+          <include name="checkOut"/>
+          <include name="searchProduct"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="addToCart"/>
+        </methods>
+      </class> <!-- com.se.playground.AmazonShopping -->
+    </classes>
+  </test> <!-- Default test(failed)(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Failed suite [Default suite]]] -->

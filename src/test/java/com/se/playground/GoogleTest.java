@@ -1,5 +1,8 @@
 package com.se.playground;
 
+import java.util.List;
+import java.util.stream.Stream;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +21,7 @@ public class GoogleTest {
 	public void setup() {
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
 		driver = new ChromeDriver();
+		
 	}
 
 	@Test
@@ -25,14 +29,20 @@ public class GoogleTest {
 		driver.get("http://www.google.com/ncr");
 		WebElement searchTxt = driver.findElement(By.name("q"));
 		searchTxt.sendKeys(SEARCH_TERM);
-		Thread.sleep(3000);
-		WebElement searchBtn = driver.findElement(By.cssSelector("[name='btnK']"));
+//		Thread.sleep(3000);
+		List<WebElement> searchBtn = driver.findElements(By.name("btnK"));
+		Stream<WebElement> visibleElements = searchBtn.stream().filter(WebElement::isDisplayed);
+		WebElement elementToInteract = visibleElements.findFirst().get();
+		elementToInteract.click();
+		
+//		searchBtn.stream().filter(WebElement::isDisplayed).findFirst().get().click();
 		// *[text()='Login'] - Exact match
 		//tagname[contains(whereToSearch,whatToSearch)]
 		// button[contains(.,'Login')] - Partial match
 		// button[contains(text(),'Login')] - Partial match
+		//button[contains(@name,'btn')] - Partial match
 //		(//button[contains(.,'Login')])[2]
-		searchBtn.click();
+//		searchBtn.click();
 		Assert.assertEquals(driver.getTitle().substring(0, 14), SEARCH_TERM);
 	}
 

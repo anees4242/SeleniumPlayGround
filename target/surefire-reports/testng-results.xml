@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="13015" started-at="2022-05-23T23:01:59 IST" finished-at="2022-05-23T23:02:12 IST">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="13015" started-at="2022-05-23T23:01:59 IST" finished-at="2022-05-23T23:02:12 IST">
+      <class name="com.se.playground.GoogleTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.se.playground.GoogleTest@1f36e637]" name="setup" is-config="true" duration-ms="3862" started-at="2022-05-23T23:01:55 IST" finished-at="2022-05-23T23:01:59 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="login()[pri:0, instance:com.se.playground.GoogleTest@1f36e637]" name="login" duration-ms="11540" started-at="2022-05-23T23:01:59 IST" finished-at="2022-05-23T23:02:11 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.se.playground.GoogleTest@1f36e637]" name="teardown" is-config="true" duration-ms="1446" started-at="2022-05-23T23:02:11 IST" finished-at="2022-05-23T23:02:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.se.playground.GoogleTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
